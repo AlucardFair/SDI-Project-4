@@ -1,8 +1,9 @@
-/* 
+/*
 Zachery Hernandez
-February 27, 2012
-Deliverable 1
-BlackBerry, Themes, SVG
+March 22, 2012
+Deliverable 4
+Strings, Numbers, Arrays
+Public Git Repository at: https://github.com/AlucardFair/SDI-Project-4
 */
 // String Manipulation //
 	// MAKEUP: Functions (Nested), deliverable 2 //
@@ -63,15 +64,13 @@ String.prototype.toTitleCase = function () {
 } // This allows the full string to be split into separate words, then capitalizes the first letter in each word. //
 var string = instructor.name(); // Calls original //
 string = string.toTitleCase(); // Capitalizes original //
-console.log("My Instructor is" + string.toTitleCase() + ".");
-
-
 // Replace Manipulation //
 var str = teach.name(); // Calls original //
 var newstr = str.replace(/,/i, " &"); // Replaces declared with new declaration //
-console.log(string.toTitleCase() + " teaches" + newstr + ".");
 var num = contactPhone.name(); // Calls Original //
 var newnum = num.replace(/407-679-0100/i, contactEmail.name()); // Replaces declared with new declaration //
-console.log("You can reach " + string.toTitleCase() + " at " + contactPhone.name() + ", but sending an email to " + newnum + " is better.");
+console.log("My Instructor is" + string.toTitleCase() + ".");
+console.log(string.toTitleCase() + " teaches " + newstr + ".");
+console.log("You can reach" + string.toTitleCase() + " at " + contactPhone.name() + ", but sending an email to " + newnum + " is better.");
 
 alert("JavaScript works!");
