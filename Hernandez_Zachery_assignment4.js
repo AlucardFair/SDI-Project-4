@@ -50,6 +50,7 @@ var validationLibrary = (function(){
 validationLibrary.checkPhoneNumber("123-456-7890");
 validationLibrary.swapSymbol("JavaScript, JSON");
 validationLibrary.name("zachery hernandez");
+
 /*
 // String Manipulation //
 	// MAKEUP: Functions (Nested), deliverable 2 //
