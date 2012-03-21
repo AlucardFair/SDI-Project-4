@@ -5,6 +5,42 @@ Deliverable 4
 Strings, Numbers, Arrays
 Public Git Repository at: https://github.com/AlucardFair/SDI-Project-4
 */
+
+var validationLibrary = (function(){
+	
+	var str;
+    //Does the argument follow the 111-222-3333 pattern
+    var validatePhoneNumber = function (phoneNum) {
+    var i = 12;
+        if (i === phoneNum.length) {
+            return true
+        } else {
+            console.log("This is not a valid phone number.");
+        };
+    }; //end validatePhoneNumber function
+
+    return {
+        "checkPhoneNumber": function(phoneNum) {
+        	console.log("Phone Number: " + phoneNum);
+            console.log("Is the phone number valid? " + validatePhoneNumber (phoneNum));
+        }
+    };
+    
+    // Replace symbols in string
+    var replace = function (change) {
+		str.replace(/,/i, " &"); // Replaces declared with new declaration //
+	};
+	return {
+		"swapSymbols": function(change) {
+			console.log(str.replace(/,/i, " &"));
+		}
+	};
+})(); 
+ 
+// MAIN BODY
+validationLibrary.swapSymbols = "JavaScript, JSON data.";
+validationLibrary.checkPhoneNumber("123-456-7890");
+/*
 // String Manipulation //
 	// MAKEUP: Functions (Nested), deliverable 2 //
 var fsoLibrary = function (name) {
@@ -63,7 +99,7 @@ String.prototype.toTitleCase = function () {
    return txt;
 } // This allows the full string to be split into separate words, then capitalizes the first letter in each word. //
 var string = instructor.name(); // Calls original //
-string = string.toTitleCase(); // Capitalizes original //
+string = string.toTitleCase(); // Splits words in string and capitalizes original //
 // Replace Manipulation //
 var str = teach.name(); // Calls original //
 var newstr = str.replace(/,/i, " &"); // Replaces declared with new declaration //
@@ -72,5 +108,19 @@ var newnum = num.replace(/407-679-0100/i, contactEmail.name()); // Replaces decl
 console.log("My Instructor is" + string.toTitleCase() + ".");
 console.log(string.toTitleCase() + " teaches " + newstr + ".");
 console.log("You can reach" + string.toTitleCase() + " at " + contactPhone.name() + ", but sending an email to " + newnum + " is better.");
-
+	var capitalizeName = function () {
+	String.prototype.toTitleCase = function (name) {
+		var txt = "";
+		var wrds = this.split(" ");
+		for(key in wrds) {
+		txt += " " + wrds[key].substr(0,1).toUpperCase() + wrds[key].substr(1,wrds[key].length);
+		}
+	}
+	};
+   	return {
+   		txt: function(name) {
+   			console.log(name);
+   		}
+	}; // This allows the full string to be split into separate words, then capitalizes the first letter in each word. //	
+*/
 alert("JavaScript works!");
