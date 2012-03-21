@@ -14,42 +14,49 @@ var validationLibrary = (function(){
         if (i === phoneNum.length) {
             return true
         } else {
-            console.log("This is not a valid phone number.");
+            return false
         };
     }; //end validatePhoneNumber function
 	// Replace symbols in string
     var change = function (replace) {
-    	var string = "";
-		var newString = string.replace(/,/i, " &"); // Replaces declared with new declaration //
+    	var string = replace;
+		var newString = string.replace("and", "&"); // Replaces declared with new declaration //
+		return newString;
 	}; // end replace function
 	// Title Case and split a string
-	var capitalizeName = function () {
-	String.prototype.toTitleCase = function (name) {
+	var capitalizeName = function (name_in) {
 		var name = "";
-		var wrds = this.split(" ");
-		for(key in wrds) {
-		name += " " + wrds[key].substr(0,1).toUpperCase() + wrds[key].substr(1,wrds[key].length);
+		var wrds = name_in.split(" ");
+		for (key in wrds) {
+			name += " " + wrds[key].substr(0,1).toUpperCase() + wrds[key].substr(1, wrds[key].length);
 		}
-	}
+		return name;
 	}; // end title case and split function
+	
     return {
         "checkPhoneNumber": function(phoneNum) {
         	console.log("Phone Number: " + phoneNum);
             console.log("Is the phone number valid? " + validatePhoneNumber (phoneNum));
         },
-        "swapSymbol": function(replace) {
-			console.log(replace);
-		},
-		"name": function(name) {
-   			console.log(name);
+        "swapSymbol": function (replace) {
+        	console.log(replace);
+        	console.log(change (replace));
+        },
+		"properName": function(name_in) {
+			console.log(name_in);
+   			console.log(capitalizeName (name_in));
+   		},
+   		"value": function(allChar) {
+   			console.log(allChar);
+   			console.log(numValue (allChar));
    		}
     };
 })(); 
  
 // MAIN BODY
 validationLibrary.checkPhoneNumber("123-456-7890");
-validationLibrary.swapSymbol("JavaScript, JSON");
-validationLibrary.name("zachery hernandez");
+validationLibrary.swapSymbol("JavaScript and JSON");
+validationLibrary.properName("zachery hernandez");
 
 /*
 // String Manipulation //
