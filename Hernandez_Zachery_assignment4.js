@@ -8,7 +8,6 @@ Public Git Repository at: https://github.com/AlucardFair/SDI-Project-4
 
 var validationLibrary = (function(){
 	
-	var str;
     //Does the argument follow the 111-222-3333 pattern
     var validatePhoneNumber = function (phoneNum) {
     var i = 12;
@@ -18,28 +17,39 @@ var validationLibrary = (function(){
             console.log("This is not a valid phone number.");
         };
     }; //end validatePhoneNumber function
-
+	// Replace symbols in string
+    var change = function (replace) {
+    	var string = "";
+		var newString = string.replace(/,/i, " &"); // Replaces declared with new declaration //
+	}; // end replace function
+	// Title Case and split a string
+	var capitalizeName = function () {
+	String.prototype.toTitleCase = function (name) {
+		var name = "";
+		var wrds = this.split(" ");
+		for(key in wrds) {
+		name += " " + wrds[key].substr(0,1).toUpperCase() + wrds[key].substr(1,wrds[key].length);
+		}
+	}
+	}; // end title case and split function
     return {
         "checkPhoneNumber": function(phoneNum) {
         	console.log("Phone Number: " + phoneNum);
             console.log("Is the phone number valid? " + validatePhoneNumber (phoneNum));
-        }
+        },
+        "swapSymbol": function(replace) {
+			console.log(replace);
+		},
+		"name": function(name) {
+   			console.log(name);
+   		}
     };
-    
-    // Replace symbols in string
-    var replace = function (change) {
-		str.replace(/,/i, " &"); // Replaces declared with new declaration //
-	};
-	return {
-		"swapSymbols": function(change) {
-			console.log(str.replace(/,/i, " &"));
-		}
-	};
 })(); 
  
 // MAIN BODY
-validationLibrary.swapSymbols = "JavaScript, JSON data.";
 validationLibrary.checkPhoneNumber("123-456-7890");
+validationLibrary.swapSymbol("JavaScript, JSON");
+validationLibrary.name("zachery hernandez");
 /*
 // String Manipulation //
 	// MAKEUP: Functions (Nested), deliverable 2 //
