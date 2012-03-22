@@ -10,11 +10,11 @@ var validationLibrary = (function(){
 	
     //Does the argument follow the 111-222-3333 pattern //
     var validatePhoneNumber = function (phoneNum) {
-    var i = 12;
-        if (i === phoneNum.length) {
+    var checkPattern = (/\d{3}\-\d{3}\-\d{4}/); // \d matches any decimal digit. Calls for 3, then 3 and then 4 //
+        if (phoneNum.match(checkPattern)) {
             return true
         } else {
-            return false
+            return false + " Please enter a valid phone number."
         };
     }; //end validatePhoneNumber function //
 	// Replace symbols in string //
@@ -76,7 +76,7 @@ var validationLibrary = (function(){
    			console.log("Is this URL valid? " + validateURL (urlName));
    		},
    		"checkMoney": function (value) {
-   			console.log("This is not acceptable entry for currency:", value);
+   			console.log("This is not an acceptable entry for currency:", value);
    			console.log("Please, use full decimal points when entering currency:", validateCurrency (value));
    		}
     }; // end public information //
