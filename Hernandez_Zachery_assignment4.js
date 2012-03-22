@@ -32,6 +32,25 @@ var validationLibrary = (function(){
 		}
 		return name;
 	}; // end title case and split function
+	// Total value of an Array
+	var numValue = function (allChar) {
+		var arr = [];
+		var sum = 0;
+		for (i = 0, j = arr.length; i < j; i++) {
+			if (!isNAN(parseInt(arr[i]))) {
+				sum += arr[i];
+			}
+		}
+		return sum;
+	};
+	// Does the argument follow the http or https pattern
+	var validateURL = function (urlName) {
+        if (urlName.indexOf == "http:" || "https:") {
+            return true
+        } else {
+            return false
+        };
+    };
 	
     return {
         "checkPhoneNumber": function(phoneNum) {
@@ -49,6 +68,10 @@ var validationLibrary = (function(){
    		"value": function(allChar) {
    			console.log(allChar);
    			console.log(numValue (allChar));
+   		},
+   		"checkURL": function(urlName) {
+   			console.log("URL: " + urlName);
+   			console.log("Is this URL valid? " + validateURL (urlName));
    		}
     };
 })(); 
@@ -57,6 +80,8 @@ var validationLibrary = (function(){
 validationLibrary.checkPhoneNumber("123-456-7890");
 validationLibrary.swapSymbol("JavaScript and JSON");
 validationLibrary.properName("zachery hernandez");
+validationLibrary.value(["a", "b", "c", "def", 1, 2, 3, 4]);
+validationLibrary.checkURL("http://www.builtbyrequest.weebly.com");
 
 /*
 // String Manipulation //
