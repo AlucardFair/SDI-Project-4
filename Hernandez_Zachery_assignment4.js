@@ -32,16 +32,11 @@ var validationLibrary = (function(){
 		}
 		return name;
 	}; // end title case and split function
-	// Total value of an Array
-	var numValue = function (allChar) {
-		var arr = [];
-		var sum = 0;
-		for (i = 0, j = arr.length; i < j; i++) {
-			if (!isNAN(parseInt(arr[i]))) {
-				sum += arr[i];
-			}
-		}
-		return sum;
+	// Return a number from a string
+	var extractNum = function (extract) {
+		var numString = extract;
+		var extractNum = parseInt(extract);
+		return extractNum;
 	};
 	// Does the argument follow the http or https pattern
 	var validateURL = function (urlName) {
@@ -71,17 +66,17 @@ var validationLibrary = (function(){
 			console.log("This is my name: " + name_in);
    			console.log("This is my name entered correctly:" + capitalizeName (name_in));
    		},
-   		"value": function(allChar) {
-   			console.log("Here is an array: " + allChar);
-   			console.log("Here is the value of the array: " + numValue (allChar));
+   		"removeNum": function(extract) {
+   			console.log("This is a string: " + extract);
+   			console.log("This is the number removed from the string:", extractNum (extract));
    		},
    		"checkURL": function(urlName) {
    			console.log("URL: " + urlName);
    			console.log("Is this URL valid? " + validateURL (urlName));
    		},
    		"checkMoney": function (value) {
-   			console.log("This is not acceptable: " + value);
-   			console.log("Please, use full decimal points when entering currency: " + validateCurrency (value));
+   			console.log("This is not acceptable entry for currency:", value);
+   			console.log("Please, use full decimal points when entering currency:", validateCurrency (value));
    		}
     };
 })(); 
@@ -90,7 +85,7 @@ var validationLibrary = (function(){
 validationLibrary.checkPhoneNumber("123-456-7890");
 validationLibrary.swapSymbol("JavaScript and JSON");
 validationLibrary.properName("zachery hernandez");
-validationLibrary.value(["a", "b", "c", "def", 1, 2, 3, 4]);
+validationLibrary.removeNum("123456789");
 validationLibrary.checkURL("http://www.builtbyrequest.weebly.com");
 validationLibrary.checkMoney(135.5);
 
