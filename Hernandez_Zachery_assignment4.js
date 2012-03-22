@@ -51,6 +51,12 @@ var validationLibrary = (function(){
             return false
         };
     };
+    // Formatting a number to a certain amount of decimal points
+    var validateCurrency = function (value) {
+    	var num = value;
+    	var newNum = num.toFixed(2)
+    	return newNum;
+    };
 	
     return {
         "checkPhoneNumber": function(phoneNum) {
@@ -58,20 +64,24 @@ var validationLibrary = (function(){
             console.log("Is the phone number valid? " + validatePhoneNumber (phoneNum));
         },
         "swapSymbol": function (replace) {
-        	console.log(replace);
-        	console.log(change (replace));
+        	console.log("This is fine: " + replace);
+        	console.log("But, please use the ampersand when possible: " + change (replace));
         },
 		"properName": function(name_in) {
-			console.log(name_in);
-   			console.log(capitalizeName (name_in));
+			console.log("This is my name: " + name_in);
+   			console.log("This is my name entered correctly:" + capitalizeName (name_in));
    		},
    		"value": function(allChar) {
-   			console.log(allChar);
-   			console.log(numValue (allChar));
+   			console.log("Here is an array: " + allChar);
+   			console.log("Here is the value of the array: " + numValue (allChar));
    		},
    		"checkURL": function(urlName) {
    			console.log("URL: " + urlName);
    			console.log("Is this URL valid? " + validateURL (urlName));
+   		},
+   		"checkMoney": function (value) {
+   			console.log("This is not acceptable: " + value);
+   			console.log("Please, use full decimal points when entering currency: " + validateCurrency (value));
    		}
     };
 })(); 
@@ -82,6 +92,7 @@ validationLibrary.swapSymbol("JavaScript and JSON");
 validationLibrary.properName("zachery hernandez");
 validationLibrary.value(["a", "b", "c", "def", 1, 2, 3, 4]);
 validationLibrary.checkURL("http://www.builtbyrequest.weebly.com");
+validationLibrary.checkMoney(135.5);
 
 /*
 // String Manipulation //
